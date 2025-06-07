@@ -1,0 +1,19 @@
+FROM python:3.11.9-alpine3.20
+
+ENV FLASK_APP=api.py
+
+WORKDIR /app
+
+COPY ./requirements.txt .
+
+RUN \
+    apk add --no-cache postgresql-libs && \
+    apk add --no-cache --virtual .build-deps gcc postgresql-dev && \
+    pip install --no-cache-dir --upgrade -r requirements.txt && \
+    apk --purge del .build-deps
+
+COPY . .
+
+EXPOSE 80
+
+CMD ["python", "api.py"]

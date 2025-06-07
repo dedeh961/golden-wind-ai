@@ -31,4 +31,4 @@ São modelos especialmente úteis para GPUs mais antigas ou com pouca VRAM.
 1. WSL 2
 2. Docker
 3. Python 3.11 com as bibliotecas descritas nos arquivos requirements.txt
-4. Interessante ter uma GPU com suporte para o CUDA
+4. Interessante ter uma GPU que suporta o CUDA
